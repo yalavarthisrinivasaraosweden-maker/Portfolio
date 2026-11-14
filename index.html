@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yalavarthi Srinivasarao — Senior QA Automation Engineer</title>
+<meta name="description" content="Portfolio of Yalavarthi Srinivasarao, Senior QA Automation Engineer and SDET based in Gothenburg, Sweden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F8F7;
+    --surface: #FFFFFF;
+    --ink: #12201B;
+    --muted: #55645E;
+    --line: #D9E1DD;
+    --accent: #0B7A5C;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #DDF1EA;
+    --console-bg: #10201A;
+    --console-ink: #D7EBE2;
+    --console-dim: #7F9A8F;
+    --console-pass: #5BE0B0;
+    --shadow: 0 1px 2px rgba(18,32,27,.05), 0 8px 24px rgba(18,32,27,.06);
+    --font-head: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0D1512;
+      --surface: #131E1A;
+      --ink: #E6F0EB;
+      --muted: #98A9A1;
+      --line: #25332E;
+      --accent: #4CD3A4;
+      --accent-ink: #072018;
+      --accent-soft: #163029;
+      --console-bg: #08100D;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0D1512;
+    --surface: #131E1A;
+    --ink: #E6F0EB;
+    --muted: #98A9A1;
+    --line: #25332E;
+    --accent: #4CD3A4;
+    --accent-ink: #072018;
+    --accent-soft: #163029;
+    --console-bg: #08100D;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 76px); }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color .25s, color .25s;
+  }
+  h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0; letter-spacing: -0.02em; }
+  p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
+  section { padding: 4.5rem 0; }
+  .sec-head { margin-bottom: 2rem; max-width: 40rem; }
+  .sec-head h2 { font-size: clamp(1.75rem, 4vw, 2.4rem); font-weight: 700; }
+  .sec-head p { color: var(--muted); margin-top: .5rem; }
+
+  /* Header */
+  .site-header {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; gap: 1rem; min-height: 60px; }
+  .brand { font-family: var(--font-head); font-weight: 800; text-decoration: none; letter-spacing: -0.02em; white-space: nowrap; }
+  nav { margin-left: auto; min-width: 0; }
+  nav ul { list-style: none; display: flex; gap: .25rem; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; }
+  nav ul::-webkit-scrollbar { display: none; }
+  nav a { display: block; padding: .4rem .7rem; border-radius: 999px; text-decoration: none; font-size: .95rem; color: var(--muted); white-space: nowrap; transition: background-color .2s, color .2s; }
+  nav a:hover { background: var(--accent-soft); color: var(--ink); }
+  .theme-btn {
+    flex: none; width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    display: grid; place-items: center; cursor: pointer; transition: border-color .2s, transform .2s;
+  }
+  .theme-btn:hover { border-color: var(--accent); }
+  .theme-btn:active { transform: scale(.94); }
+  .theme-btn svg { width: 20px; height: 20px; }
+  .theme-btn .sun { display: none; }
+  :root[data-theme="dark"] .theme-btn .sun { display: block; }
+  :root[data-theme="dark"] .theme-btn .moon { display: none; }
+  @media (max-width: 720px) {
+    .bar { flex-wrap: wrap; padding-top: .4rem; padding-bottom: .4rem; row-gap: 0; }
+    .brand { order: 1; }
+    .theme-btn { order: 2; margin-left: auto; }
+    nav { order: 3; flex: 0 0 100%; margin-left: 0; }
+  }
+
+  /* Hero */
+  .hero { padding: 4rem 0 3.5rem; }
+  .hero-grid { display: grid; gap: 2.5rem; grid-template-columns: 1.1fr .9fr; align-items: center; }
+  .role { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; color: var(--accent); font-size: 1rem; }
+  .role .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .hero h1 { font-size: clamp(2.5rem, 7vw, 4.4rem); font-weight: 800; margin: 1rem 0 1.1rem; }
+  .lede { font-size: 1.2rem; color: var(--muted); max-width: 32rem; }
+  .cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+  .btn { display: inline-flex; align-items: center; min-height: 46px; padding: 0 1.3rem; border-radius: 10px; font-weight: 600; text-decoration: none; border: 1px solid var(--line); background: var(--surface); transition: transform .2s, border-color .2s; }
+  .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+  .console { background: var(--console-bg); color: var(--console-ink); border-radius: 14px; box-shadow: var(--shadow); font-family: var(--font-mono); font-size: .85rem; overflow: hidden; border: 1px solid var(--line); }
+  .console-top { display: flex; gap: 6px; padding: .7rem .9rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .console-top i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.18); }
+  .console-body { padding: 1rem 1.1rem 1.2rem; display: grid; gap: .55rem; min-height: 15.5rem; align-content: start; }
+  .c-line { opacity: 0; transform: translateY(4px); transition: opacity .35s, transform .35s; line-height: 1.45; }
+  .c-line.show, .no-js .c-line { opacity: 1; transform: none; }
+  .c-cmd { color: var(--console-dim); }
+  .c-pass { color: var(--console-pass); margin-right: .5rem; }
+  .c-sum { margin-top: .4rem; padding-top: .7rem; border-top: 1px dashed rgba(255,255,255,.15); color: var(--console-pass); }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } .hero { padding-top: 2.5rem; } }
+
+  /* About */
+  .about-grid { display: grid; gap: 2.5rem; grid-template-columns: 1.4fr 1fr; }
+  .about-text p + p { margin-top: 1rem; }
+  .facts { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; align-content: start; }
+  .facts li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1.1rem; }
+  .facts b { display: block; font-size: .85rem; color: var(--muted); font-weight: 500; }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+
+  /* Skills */
+  .skill-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+  .skill-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.2rem 1.25rem 1.3rem; }
+  .skill-card h3 { font-size: 1.05rem; margin-bottom: .8rem; font-weight: 700; }
+  .chips { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: 0; padding: 0; }
+  .chips li { font-size: .88rem; padding: .22rem .65rem; border-radius: 999px; background: var(--accent-soft); color: var(--ink); }
+  .chips li.soft { background: transparent; border: 1px dashed var(--line); color: var(--muted); }
+  .note { font-size: .88rem; color: var(--muted); margin-top: .8rem; }
+
+  /* Timeline */
+  .timeline { position: relative; list-style: none; margin: 0; padding: 0 0 0 2rem; }
+  .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+  .tl-item { position: relative; padding-bottom: 2rem; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -2rem; top: .45rem; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--line); transition: background-color .4s, border-color .4s, box-shadow .4s;
+  }
+  .tl-item.in::before { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft); }
+  .tl-card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem 1.5rem; box-shadow: var(--shadow); }
+  .tl-card h3 { font-size: 1.3rem; font-weight: 700; }
+  .tl-meta { color: var(--muted); font-size: .95rem; margin: .3rem 0 1rem; }
+  .tl-meta strong { color: var(--accent); font-weight: 600; }
+  .tl-card ul { margin: 0; padding-left: 1.15rem; display: grid; gap: .55rem; }
+  .tl-card li::marker { color: var(--accent); }
+  .tl-card li { padding-left: .2rem; }
+
+  /* Education */
+  .edu-grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .edu, .cert { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.3rem 1.4rem; }
+  .edu h3, .cert h3 { font-size: 1.1rem; font-weight: 700; }
+  .edu p, .cert li { color: var(--muted); }
+  .edu .when { color: var(--accent); font-weight: 600; font-size: .95rem; margin-top: .3rem; }
+  .cert ul { margin: .7rem 0 0; padding-left: 1.1rem; display: grid; gap: .35rem; }
+  .cert li::marker { color: var(--accent); }
+
+  /* Contact */
+  .contact-box { background: var(--console-bg); color: var(--console-ink); border-radius: 18px; padding: clamp(1.5rem, 5vw, 3rem); display: grid; gap: 1.5rem; }
+  .contact-box h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 800; color: #fff; }
+  .contact-box > p { color: #B6CBC2; max-width: 34rem; }
+  .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+  .contact-list li { display: flex; flex-wrap: wrap; gap: .3rem 1rem; align-items: baseline; padding-bottom: .75rem; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .contact-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .contact-list span.k { min-width: 6.5rem; color: #8FA89D; font-size: .95rem; }
+  .contact-list a { color: #fff; font-weight: 600; text-underline-offset: 4px; overflow-wrap: anywhere; }
+  .contact-list a:hover { color: var(--console-pass); }
+  .contact-box .ph { color: #8FA89D; }
+  footer { padding: 2rem 0 3rem; color: var(--muted); font-size: .92rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+    .c-line { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Back to top">Y. Srinivasarao</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch to dark mode" title="Toggle light / dark mode">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="role"><span class="dot" aria-hidden="true"></span>Senior QA Automation Engineer &amp; SDET</span>
+        <h1>Yalavarthi Srinivasarao</h1>
+        <p class="lede">5+ years building automated test frameworks, API checks and CI/CD quality gates for Agile teams.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn" href="#experience">See experience</a>
+        </div>
+      </div>
+
+      <div class="console" aria-label="Decorative test run listing my main tools">
+        <div class="console-top" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="console-body" id="console">
+          <div class="c-line c-cmd">$ run --suite srinivasarao</div>
+          <div class="c-line"><span class="c-pass">✓</span>UI automation: Playwright, Selenium, Cypress, Robot Framework</div>
+          <div class="c-line"><span class="c-pass">✓</span>API: REST-assured, Postman, JMeter</div>
+          <div class="c-line"><span class="c-pass">✓</span>CI/CD: Jenkins, TeamCity, Docker</div>
+          <div class="c-line"><span class="c-pass">✓</span>Languages: Python, Java, TypeScript</div>
+          <div class="c-line c-sum">All checks passed · Gothenburg · available immediately</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head"><h2>About me</h2></div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a senior QA automation engineer and SDET with 5+ years across the full software test life cycle in Agile, cross-functional teams. I design, build and maintain scalable automated test frameworks in Python, Java and TypeScript, using Playwright, Selenium WebDriver, Robot Framework and Cucumber BDD.</p>
+          <p>I test APIs and integrations across microservice architectures, validating REST and WebSocket contracts between services. My regression suites run in CI/CD pipelines, I own test data and environments, and I use structured root-cause analysis to turn recurring failures into permanent automated coverage.</p>
+          <p>AI-assisted development tooling is a validated part of my daily practice. I'm currently completing an MSc in AI and Automation.</p>
+        </div>
+        <ul class="facts">
+          <li><b>Based in</b>Gothenburg, Sweden</li>
+          <li><b>Availability</b>Available immediately</li>
+          <li><b>Languages</b>English (C1, fluent) · Swedish (A2/B1, basic)</li>
+          <li><b>Certified</b>Sun Certified Java Programmer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head"><h2>Skills</h2><p>Dashed tags are skills I'm still learning or know at a working level.</p></div>
+      <div class="skill-grid">
+        <div class="skill-card"><h3>Test automation</h3>
+          <ul class="chips"><li>Playwright</li><li>Selenium WebDriver</li><li>Cypress</li><li>Robot Framework</li><li>Cucumber (BDD)</li><li>TestNG</li><li>JUnit</li><li>Gherkin</li></ul></div>
+        <div class="skill-card"><h3>Programming</h3>
+          <ul class="chips"><li>Python</li><li>Java (SCJP certified)</li><li>TypeScript</li><li>JavaScript</li><li>SQL</li><li>NodeJS</li><li>HTML</li><li>CSS</li></ul></div>
+        <div class="skill-card"><h3>API &amp; performance</h3>
+          <ul class="chips"><li>REST-assured</li><li>Postman</li><li>JMeter</li><li>REST APIs</li><li>WebSocket APIs</li><li>Microservice contract validation</li></ul></div>
+        <div class="skill-card"><h3>CI/CD &amp; DevOps</h3>
+          <ul class="chips"><li>Jenkins</li><li>TeamCity</li><li>Docker</li><li>Git</li><li>Maven</li><li>Pipeline quality gates</li><li class="soft">GitHub Actions (working knowledge)</li><li class="soft">GitLab CI (working knowledge)</li></ul></div>
+        <div class="skill-card"><h3>Test strategy &amp; management</h3>
+          <ul class="chips"><li>Test strategy</li><li>Test planning</li><li>Quality gates</li><li>Release criteria</li><li>Defect management</li><li>JIRA</li><li>Zephyr</li><li>Confluence</li></ul></div>
+        <div class="skill-card"><h3>Methodology</h3>
+          <ul class="chips"><li>STLC</li><li>ISTQB-aligned practice</li><li>Agile / Scrum</li><li>BDD</li><li>Shift-left testing</li><li>Mobile app testing</li><li>Defect tracking</li></ul></div>
+        <div class="skill-card"><h3>Observability &amp; monitoring</h3>
+          <ul class="chips"><li>Log correlation &amp; analysis</li><li>Execution metrics</li><li>Service integration tracing</li><li>KPI &amp; quality dashboards</li><li>Browser DevTools</li><li class="soft">Distributed tracing (concepts)</li></ul></div>
+        <div class="skill-card"><h3>AI tooling</h3>
+          <ul class="chips"><li>GitHub Copilot</li><li>LLM-assisted development</li><li>MCP</li><li>AI-assisted test generation</li><li>Machine learning methods</li></ul></div>
+        <div class="skill-card"><h3>Cloud, data &amp; systems</h3>
+          <ul class="chips"><li>MySQL</li><li>Relational database design</li><li>Test data management</li><li>Windows administration</li><li>Environment configuration</li><li class="soft">AWS &amp; Azure (concepts)</li><li class="soft">Kubernetes (learning)</li></ul></div>
+        <div class="skill-card"><h3>Everyday tools</h3>
+          <ul class="chips"><li>VS Code</li><li>Eclipse</li><li>Anaconda</li><li>Jupyter Notebook</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head"><h2>Work experience</h2></div>
+      <ol class="timeline">
+
+        <li class="tl-item">
+          <div class="tl-card">
+            <h3>Senior Software Test Engineer</h3>
+            <p class="tl-meta"><strong>Talent Dial Technologies Pvt. Ltd.</strong> · Hyderabad, India · 2022 – 2025</p>
+            <ul>
+              <li>Designed and maintained scalable automation frameworks in TypeScript using Playwright and Robot Framework, structured for team extension and reducing new-test authoring time by an estimated 30%.</li>
+              <li>Delivered API and integration testing across microservice architectures with REST-assured and Postman, validating REST and WebSocket contracts and catching integration defects that component-level tests missed.</li>
+              <li>Integrated end-to-end validation into CI/CD workflows (Jenkins, TeamCity, Docker), cutting defect detection time from days to hours.</li>
+              <li>Ran structured root-cause analysis on 40+ production defects; framework-level fixes reduced defect recurrence by approximately 35% across two quarters.</li>
+              <li>Built KPI dashboards tracking execution rates, coverage and defect density, adopted by 3 stakeholder groups and cutting reporting preparation by around 4 hours per sprint.</li>
+              <li>Owned test data and environment configuration across multiple environments, keeping regression suites reproducible and removing a recurring source of false failures.</li>
+              <li>Maintained traceability from requirements to test cases to logged defects, agreeing acceptance criteria with developers and business analysts before development began.</li>
+              <li>Used AI-assisted tools (GitHub Copilot, LLM assistants) to speed up test creation and investigation, validating all generated output against real requirements.</li>
+              <li>Mentored engineers in automation practice, raising team capability.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-card">
+            <h3>Software Test Engineer</h3>
+            <p class="tl-meta"><strong>Jobiak Software Pvt. Ltd.</strong> · Hyderabad, India · 2019 – 2022</p>
+            <ul>
+              <li>Designed and built scalable Java automation frameworks using Selenium WebDriver, TestNG and Cucumber BDD, reused across multiple application areas.</li>
+              <li>Automated 200+ manual and exploratory test cases, reducing regression execution time by approximately 50% per sprint cycle.</li>
+              <li>Defined end-to-end test strategies across UI and API layers, increasing overall coverage by an estimated 40%.</li>
+              <li>Implemented Jenkins CI pipelines for test triggering, parallel execution and reporting, eliminating around 6 hours of manual effort per week.</li>
+              <li>Optimised Java automation scripts and parallel execution, reducing full regression suite runtime by approximately 45%.</li>
+              <li>Updated automation assets each release to prevent drift between tests and evolving functionality.</li>
+              <li>Investigated failures through log analysis, service integration checks and browser DevTools, tracking all defects to verified resolution.</li>
+              <li>Worked with developers, business analysts and product owners to refine requirements and agree acceptance criteria, reducing mid-sprint rework.</li>
+            </ul>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="sec-head"><h2>Education</h2></div>
+      <div class="edu-grid">
+        <article class="edu">
+          <h3>Master of Science, AI and Automation</h3>
+          <p>University West, Sweden</p>
+          <p class="when">2025 – Present</p>
+        </article>
+        <article class="edu">
+          <h3>Bachelor of Engineering, Mechanical Engineering</h3>
+          <p>University of Madras, Chennai, India</p>
+          <p class="when ph">Add graduation year</p>
+        </article>
+        <article class="cert">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Sun Certified Java Programmer (SCJP 5.0), Sun Microsystems</li>
+            <li>Sun Certified Web Component Developer (SCWCD 3.0), Sun Microsystems</li>
+            <li>ISTQB Foundation Level (planned)</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>Let's talk about quality</h2>
+        <p>I'm based in Gothenburg and available immediately. Email is the quickest way to reach me.</p>
+        <ul class="contact-list">
+          <li><span class="k">Email</span><a href="mailto:yalavarthisrinivasarao.sweden@gmail.com">yalavarthisrinivasarao.sweden@gmail.com</a></li>
+          <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/yalavarthi-srinivasarao-978421413" target="_blank" rel="noopener noreferrer">linkedin.com/in/yalavarthi-srinivasarao-978421413</a></li>
+          <li><span class="k">GitHub</span><a href="https://github.com/yalavarthisrinivasaraosweden-maker" target="_blank" rel="noopener noreferrer">github.com/yalavarthisrinivasaraosweden-maker</a></li>
+          <li><span class="k">Location</span><span>Gothenburg, Sweden</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© Yalavarthi Srinivasarao</div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+
+  function getStored() { try { return localStorage.getItem('theme'); } catch (e) { return null; } }
+  function store(v) { try { localStorage.setItem('theme', v); } catch (e) {} }
+  function systemDark() { return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+  function apply(theme) {
+    root.setAttribute('data-theme', theme);
+    btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  apply(getStored() || (systemDark() ? 'dark' : 'light'));
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    apply(next); store(next);
+  });
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero: lines appear one at a time, like a test run
+  var lines = document.querySelectorAll('#console .c-line');
+  if (reduce) {
+    lines.forEach(function (l) { l.classList.add('show'); });
+  } else {
+    lines.forEach(function (l, i) {
+      setTimeout(function () { l.classList.add('show'); }, 350 + i * 480);
+    });
+  }
+
+  // Timeline: each node fills in as it scrolls into view
+  var items = document.querySelectorAll('.tl-item');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.25 });
+    items.forEach(function (i) { io.observe(i); });
+  } else {
+    items.forEach(function (i) { i.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
